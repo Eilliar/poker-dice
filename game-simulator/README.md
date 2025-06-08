@@ -1,6 +1,6 @@
 # Dice Poker
 
-https://witcher.fandom.com/wiki/The_Witcher_dice_poker
+This is my attempt to learn more about Reinforcement Learning by implementing an agent that learns to play [the witcher dice poker](https://witcher.fandom.com/wiki/The_Witcher_dice_poker)
 
 ## Features
 
@@ -9,7 +9,9 @@ https://witcher.fandom.com/wiki/The_Witcher_dice_poker
 - **Betting Mechanics** [TBD]: Handles betting actions and resolves bets based on game outcomes.
 - **Decision Making** [TBD]: Evaluates the game state to make informed decisions and assess risks.
 
+# Requirements 
 
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync`, this will setup your env and you shoud be able to run everything.
 
 ## Running the Game
 
