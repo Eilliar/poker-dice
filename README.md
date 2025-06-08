@@ -1,6 +1,6 @@
 # Dice Poker
 
-https://witcher.fandom.com/wiki/The_Witcher_dice_poker
+This is my attempt to learn more about Reinforcement Learning by implementing an agent that learns to play [the witcher dice poker](https://witcher.fandom.com/wiki/The_Witcher_dice_poker)
 
 ## Features
 
@@ -9,19 +9,58 @@ https://witcher.fandom.com/wiki/The_Witcher_dice_poker
 - **Betting Mechanics** [TBD]: Handles betting actions and resolves bets based on game outcomes.
 - **Decision Making** [TBD]: Evaluates the game state to make informed decisions and assess risks.
 
+# Requirements 
 
+Install [uv](https://docs.astral.sh/uv/getting-started/installation/) and run `uv sync`, this will setup your env and you shoud be able to run everything.
 
 ## Running the Game
 
-To start the game, execute the following command:
+To start the game and run a Player vs Player experiment, execute the following command:
 
+```bash
+uv run src/main.py
 ```
-python src/main.py
+
+Here is one example of gameplay:
+
+```bash
+
+--- Initial Roll ---
+Player 1's initial roll: [2, 2, 5, 6, 6]
+Player 1's hand value: 2
+Player 2's initial roll: [4, 6, 3, 5, 1]
+Player 2's hand value: 0
+
+--- Choose Dice to Re-roll ---
+Player 1, enter the dice numbers (1-5) to re-roll, separated by spaces (or press Enter to keep all): 3
+Player 2, enter the dice numbers (1-5) to re-roll, separated by spaces (or press Enter to keep all): 5
+
+--- Re-rolling Dice ---
+Player 1's new roll: [2, 2, 1, 6, 6]
+Player 1's hand value: 2
+Player 2's new roll: [4, 6, 3, 5, 5]
+Player 2's hand value: 1
+
+--- Choose Dice to Re-roll ---
+Player 1, enter the dice numbers (1-5) to re-roll, separated by spaces (or press Enter to keep all): 3
+Player 2, enter the dice numbers (1-5) to re-roll, separated by spaces (or press Enter to keep all): 5
+
+--- Re-rolling Dice ---
+Player 1's new roll: [2, 2, 6, 6, 6]
+Player 1's hand value: 6
+Player 2's new roll: [4, 6, 3, 5, 6]
+Player 2's hand value: 1
+
+Comparing hands...
+Player 1 is the winner!
 ```
 
 
 
-## Games:
+## Training the agent:
+
+Below are some examples of models trained and some of it's games after training. Keep in mind that for now, the agent learns to play by playing alone (single agent environment) and the idea is to check if it can learng the rules of the game through game play.
+
 1. 
 ```python
 policy_kwargs = dict(net_arch=[32, 32])
